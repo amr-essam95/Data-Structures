@@ -15,6 +15,8 @@ public:
 	void addBack(T d);
 	void printAll(Node<T>* c);
 	void printList();
+	Node<T>* find(T x);
+	void remove(T x);
 	
 };
 #include "linkedlist.tpp"
