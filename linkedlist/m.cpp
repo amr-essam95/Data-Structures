@@ -21,7 +21,9 @@ int main()
 	Node<int>* y=b.find(400);
 	cout<<y->getData()<<endl<<endl;
 	// b.remove(400);
-	b.remove(200);
+	b.remove(400);
+	b.printList();
+	b.clear();
 	b.printList();
 
 	return 0;

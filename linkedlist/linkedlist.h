@@ -7,8 +7,9 @@ using namespace std;
 template <class T>
 class linkedlist
 {
-	Node<T> * chain;
+	
 public:
+	Node<T> * chain;
 	linkedlist();
 	// ~linkedlist();
 	void addFront(T d);
@@ -17,6 +18,8 @@ public:
 	void printList();
 	Node<T>* find(T x);
 	void remove(T x);
+	void deleteAll(Node<T>* x);
+	void clear();
 	
 };
 #include "linkedlist.tpp"

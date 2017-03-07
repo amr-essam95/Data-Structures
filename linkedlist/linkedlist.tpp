@@ -37,7 +37,8 @@ void linkedlist<T>::printAll(Node<T>* c)
 template <class T>
 void linkedlist<T>::printList()
 {
-	printAll(chain);
+	if (chain!=NULL)
+		printAll(chain);
 }
 template <class T>
 Node<T>* linkedlist<T>::find(T x)
@@ -54,6 +55,8 @@ Node<T>* linkedlist<T>::find(T x)
 template <class T>
 void linkedlist<T>::remove(T x)
 {
+	if(chain==NULL)
+		return;
 	if (chain->getData()==x)
 	{
 		Node<T>* temp=chain;
@@ -73,4 +76,20 @@ void linkedlist<T>::remove(T x)
 		}
 	}
 
+}
+template <class T>
+void linkedlist<T>::deleteAll(Node<T>* x)
+{
+	if(x!=NULL)
+	{
+		deleteAll(x->getNext());
+		delete x;
+	}
+
+}
+template <class T>
+void linkedlist<T>::clear()
+{	if (chain!=NULL)
+		deleteAll(chain);
+		chain=NULL;
 }
