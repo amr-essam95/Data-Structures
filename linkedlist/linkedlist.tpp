@@ -26,6 +26,23 @@ void linkedlist<T>::addBack(T d)
 	ptr->setNext(temp); 
 }
 template <class T>
+void linkedlist<T>::addMiddle(int index,T d)
+{
+	if (chain==NULL)
+		addFront(d);
+	else
+	{
+		Node<T>* temp=chain;
+		Node<T>* newNode=new Node<T> (d);
+		for(int i=0;i<index-1;i++)
+			temp=temp->getNext();
+		Node<T>* nextNode=temp->getNext();
+		temp->setNext(newNode);
+		newNode->setNext(nextNode);
+	}
+
+}
+template <class T>
 void linkedlist<T>::printAll(Node<T>* c)
 {
 	if(c!=NULL)
@@ -92,4 +109,12 @@ void linkedlist<T>::clear()
 {	if (chain!=NULL)
 		deleteAll(chain);
 		chain=NULL;
+}
+template <class T>
+Node<T>* linkedlist<T>::getFront()
+{
+	if (chain!=nullptr)
+		return chain;
+	else
+		return nullptr;
 }

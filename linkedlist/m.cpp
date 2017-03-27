@@ -12,19 +12,18 @@ int main()
 	a.setData(x);
 	// cout<<a.getData()<<endl;
 	linkedlist<int> b;
-	b.addFront(x);
+	// b.addFront(x);
 	b.addFront(100);
 	b.addFront(200);
-	b.addBack(300);
+	b.addBack(500);
 	b.addBack(400);
-	b.printList();
+	b.addMiddle(3,600);
+	Node<int>* z;
+	z=b.getFront();
+	cout<<z->getData();
+	//b.printList();
 	Node<int>* y=b.find(400);
-	cout<<y->getData()<<endl<<endl;
-	// b.remove(400);
-	b.remove(400);
-	b.printList();
-	b.clear();
-	b.printList();
+
 
 	return 0;
 }

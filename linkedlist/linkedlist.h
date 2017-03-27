@@ -14,12 +14,14 @@ public:
 	// ~linkedlist();
 	void addFront(T d);
 	void addBack(T d);
+	void addMiddle(int index,T d);
 	void printAll(Node<T>* c);
 	void printList();
 	Node<T>* find(T x);
 	void remove(T x);
 	void deleteAll(Node<T>* x);
 	void clear();
+	Node<T>* getFront();
 	
 };
 #include "linkedlist.tpp"
