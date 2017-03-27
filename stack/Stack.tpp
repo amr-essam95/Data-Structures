@@ -14,14 +14,14 @@ void Stack<T>::push (T d)
 	list.addFront(d);
 }
 template <class T>
-Node<T>* Stack<T>::pop()
+T Stack<T>::pop()
 {
-	Node<T>* x = list.getFront();
+	T x = list.getFront();
 	list.remove();
 	return x;
 }
 template <class T>
-Node<T>* Stack<T>::peek()
+T Stack<T>::peek()
 {
 	return list.getFront();
 }

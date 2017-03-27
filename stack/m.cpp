@@ -8,7 +8,7 @@ int main()
 {
 	Stack <int> x;
 	x.push(10);
-	cout<<x.peek()->getData()<<"hello"<<endl;
-	cout<<x.pop()->getData()<<endl;
+	cout<<x.peek()<<"hello"<<endl;
+	cout<<x.pop()<<endl;
 	return 0;
 }

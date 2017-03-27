@@ -10,8 +10,8 @@ private:
 public:
 	Stack();
 	void push(T d);
-	Node<T>* pop();
-	Node<T>* peek();
+	T pop();
+	T peek();
 };
 
 #include "Stack.tpp"

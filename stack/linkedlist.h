@@ -22,7 +22,7 @@ public:
 	void remove();	//remove first element
 	void deleteAll(Node<T>* x);
 	void clear();
-	Node<T>* getFront();
+	T getFront();
 	
 };
 #include "linkedlist.tpp"
