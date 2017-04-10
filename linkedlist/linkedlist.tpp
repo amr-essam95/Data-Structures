@@ -1,5 +1,7 @@
 #include "linkedlist.h"
 #include "Node.h"
+#include <typeinfo>
+
 
 template <class T>
 linkedlist<T>::linkedlist()
@@ -139,10 +141,51 @@ int linkedlist<T>::getSize()
 	// 	return 0;
 	Node<T>* temp = chain;
 	int counter = 0;
-	while(temp!=nullptr)
+	while(temp != nullptr)
 	{
 		temp = temp->getNext();
 		counter ++;
 	}
 	return counter;
+}
+// This function is a recursive assistive function for the reverse interface
+// given to the user
+template <class T>
+void linkedlist<T>::reverse()
+{
+	if (chain == nullptr)
+		return;
+	if (chain->getNext() == nullptr)
+		return;
+	Node<T>* ptr = chain;
+	/*
+		This while chooses the first element in linked list
+		move the next element to the begining of list and continue until next is null
+	*/
+	while(ptr->getNext() != nullptr)
+	{
+		Node<T>* temp = chain;
+		chain = ptr->getNext();
+		ptr->setNext((ptr->getNext())->getNext());
+		chain->setNext(temp);
+	}
+
+}
+template <class T>
+T linkedlist<T>::average()
+{
+	if (chain == nullptr)
+		return 0;
+	if (chain->getNext() == nullptr)
+		return chain->getData();
+	int counter = 0;
+	double sum = 0;
+	Node<T>* temp = chain;
+	while(temp != nullptr)
+	{
+		sum += temp->getData();
+		counter ++;
+		temp = temp->getNext();
+	}
+	return sum/counter;
 }

@@ -23,6 +23,8 @@ public:
 	void clear();
 	bool isEmpty();
 	int getSize();
+	void reverse();
+	T average();
 	Node<T>* find(T x);	
 	Node<T>* getFront();
 	
