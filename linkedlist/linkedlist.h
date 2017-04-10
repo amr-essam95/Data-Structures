@@ -17,12 +17,14 @@ public:
 	void addMiddle(int index,T d);
 	void printAll(Node<T>* c);
 	void printList();
-	Node<T>* find(T x);
 	void remove(T x);
 	void remove();	//remove first element
 	void deleteAll(Node<T>* x);
 	void clear();
-	T getFront();
+	bool isEmpty();
+	int getSize();
+	Node<T>* find(T x);	
+	Node<T>* getFront();
 	
 };
 #include "linkedlist.tpp"

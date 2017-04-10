@@ -111,12 +111,12 @@ void linkedlist<T>::clear()
 		chain=NULL;
 }
 template <class T>
-T linkedlist<T>::getFront()
+Node<T>* linkedlist<T>::getFront()
 {
 	if (chain!=nullptr)
-		return chain->getData();
+		return chain;
 	else
-		return 0;
+		return nullptr;
 }
 template <class T>
 void linkedlist<T>::remove()
@@ -126,4 +126,23 @@ void linkedlist<T>::remove()
 	Node<T>* temp = chain;
 	chain =  chain->getNext();
 	delete temp;
+}
+template <class T>
+bool linkedlist<T>::isEmpty()
+{
+	return chain == nullptr;
+}
+template <class T>
+int linkedlist<T>::getSize()
+{
+	// if (chain == nullptr)
+	// 	return 0;
+	Node<T>* temp = chain;
+	int counter = 0;
+	while(temp!=nullptr)
+	{
+		temp = temp->getNext();
+		counter ++;
+	}
+	return counter;
 }

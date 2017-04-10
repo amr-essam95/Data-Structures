@@ -18,11 +18,17 @@ int main()
 	b.addBack(500);
 	b.addBack(400);
 	b.addMiddle(3,600);
+	cout << endl << "size is " << b.getSize() << endl;
 	Node<int>* z;
+	int y;
 	z=b.getFront();
-	cout<<z->getData();
+	cout<< z->getData();
 	//b.printList();
-	Node<int>* y=b.find(400);
+	Node<int>* h;
+	h=b.find(400);
+	cout<<h->getData();
+	linkedlist<float> c;
+	cout << endl << c.isEmpty();
 
 
 	return 0;
