@@ -28,10 +28,17 @@ void linkedlist<T>::addBack(T d)
 	ptr->setNext(temp); 
 }
 template <class T>
-void linkedlist<T>::addMiddle(int index,T d)
+bool linkedlist<T>::insert(int index,T d)
 {
-	if (chain==NULL)
+	if (index ==0)
+	{
 		addFront(d);
+		return true;
+	}
+	// This condition allows inserting after last element
+	// if list is {1,2} you can insert at 2 and list is {1,2,inserted}
+	if (index > getSize() || chain == nullptr)
+		return false;
 	else
 	{
 		Node<T>* temp=chain;
@@ -41,6 +48,7 @@ void linkedlist<T>::addMiddle(int index,T d)
 		Node<T>* nextNode=temp->getNext();
 		temp->setNext(newNode);
 		newNode->setNext(nextNode);
+		return true;
 	}
 
 }

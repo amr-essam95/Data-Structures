@@ -15,7 +15,7 @@ public:
 	// ~linkedlist();
 	void addFront(T d);
 	void addBack(T d);
-	void addMiddle(int index,T d);
+	bool insert(int index,T d);
 	void printAll(Node<T>* c);
 	void printList();
 	void remove(T x);
